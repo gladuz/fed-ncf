@@ -10,6 +10,11 @@ import time
 from torch.utils.data import Dataset, DataLoader
 from sklearn.model_selection import train_test_split
 import random
+import warnings
+# Suppress the deprecation warning from the cryptography module.
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    import cryptography
 
 from tensorboardX import SummaryWriter
 writer = SummaryWriter()
